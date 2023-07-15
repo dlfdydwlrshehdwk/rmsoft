@@ -1,0 +1,29 @@
+
+.mainbx{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.main_textbx{
+    text-align: center;
+}
+.main_rmimgbx{
+    width: 600px;
+    height: 600px;
+    min-width: 600px;
+}
+.main_rmimgbx img{
+    width: 100%;
+    height: 100%;
+}
+.mainbx > button{
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 35px;
+    padding: 10px 15px;
+}
