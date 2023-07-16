@@ -28,7 +28,7 @@ function Layout(props){
         {
             a.intro == 1 && 
             // 버튼누르면 사이트 끄기전까지 다시 안뜨게 하기위해 세션스토리지사용
-            // sessionStorage.getItem('intro') != 1 &&
+            sessionStorage.getItem('intro') != 1 &&
             <Intro />
         }
         
