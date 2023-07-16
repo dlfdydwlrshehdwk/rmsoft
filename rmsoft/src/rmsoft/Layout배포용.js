@@ -2,7 +2,7 @@
 import $ from "jquery";
 import "./css/layout.css";
 import { Link, Outlet } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Intro from './Intro' 
 import { useSelector } from 'react-redux';
 import pofoldata from './data/pofoldata';
@@ -22,19 +22,6 @@ function Layout(props){
     const [soga, setSoga] = useState([1,1])
     const [pjsoga , setPjsoga] = useState(0)
     const [desc, setDesc] = useState('')
-
-    useEffect(()=>{
-        if(pjsoga == 1){
-            $('.layout_header_ul').css({
-                zIndex : 0
-            })
-        }
-        if(pjsoga == 0){
-            $('.layout_header_ul').css({
-                zIndex : 1
-            })
-        }
-    },[pjsoga])
 
     return(
         <>
@@ -177,6 +164,8 @@ function Layout(props){
                 <div className='xbtn' onClick={()=>{setPjsoga(0)}}>×</div>
             </aside>
             }
+        {/* 빈루트를 만들고 JS로드 함수 포함 */}
+        {jqFn()}
         </>
         
     )
