@@ -67,6 +67,8 @@ const pofoldata = [
         left1 : './../images/and/left1.png',
         left2 : './../images/and/left2.png',
         right1 : './../images/and/right1.png',
+        right2 : './../images/and/right2.png',
+        right3 : './../images/and/right3.png',
         txt : './../images/and/txt.png',
     },
     {
@@ -81,10 +83,10 @@ const pofoldata = [
         bdc : 'black',
         left1 : './../images/fila/left1.png',
         left2 : './../images/fila/left2.png',
-        left3 : './../images/fila/left3.png',
+        left3 : '',
         right1 : './../images/fila/right1.png',
         right2 : './../images/fila/right2.png',
-        right3 : './../images/fila/right3.png',
+        right3 : '',
         txt : './../images/fila/txt.png',
     },
 ]

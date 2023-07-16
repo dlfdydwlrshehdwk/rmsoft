@@ -43,13 +43,96 @@ function Main(props){
             }
 
 
-            console.log('휠값은 : ',w)
+            // console.log('휠값은 : ',w)
         })
     }
 
     useEffect(()=>{
         // 리턴에 있는거 실행되고 나서 실행
-
+        if(w == 1){
+            $('.left1').css({
+                position: 'absolute',
+                width: '20%',
+                top : '',
+                bottom: '10%',
+                zIndex : 1,
+                aspectRatio : 'auto'
+            })
+            $('.left2').css({
+                position: 'absolute',
+                width: '20%',
+                top : '',
+                bottom: '5%',
+                left : '3%',
+                aspectRatio : 'auto'
+            })
+            $('.right1').css({
+                position: 'absolute',
+                top: '50%',
+                right: '5%',
+                width: '20%',
+                transform : 'translateY(-50%)',
+                zIndex : 1,
+                aspectRatio : 'auto'
+            })
+            $('.right2').css({
+                position: 'absolute',
+                top: '60%',
+                right: '0%',
+                width: '20%',
+                transform : 'translateY(-50%)',
+                aspectRatio : 'auto',
+                zIndex : 0
+            })
+        }
+        if(w == 2){
+            $('.left1').css({
+                position: 'absolute',
+                width: '25%',
+                top : '0%',
+                bottom: '',
+                zIndex : 1,
+                aspectRatio : 1/1.2,
+            })
+            $('.left2').css({
+                position: 'absolute',
+                width: '28%',
+                bottom: '-1%',
+                left : '2%'
+            })
+            $('.right1').css({
+                position: 'absolute',
+                top: '0%',
+                right: '0%',
+                width: '22%',
+                transform : 'translateY(0%)',
+                zIndex : 2,
+                aspectRatio : 1/1.5
+            })
+            $('.right2').css({
+                position: 'absolute',
+                top: '0%',
+                right: '0%',
+                width: '22%',
+                transform : 'translateY(0%)',
+                zIndex : 1,
+                aspectRatio : 1/1.5
+            })
+            $('.right3').css({
+                position: 'absolute',
+                top: '0%',
+                right: '0%',
+                width: '22%',
+                transform : 'translateY(0%)',
+                aspectRatio : 1/1.5
+            })
+        }
+        if(w == 3) console.log('3화면')
+        if(w == 4) console.log('4화면')
+        if(w == 5) console.log('5화면')
+        if(w == 6) console.log('6화면')
+        if(w == 7) console.log('7화면')
+        
         // 불릿 알맞는거 색칠해줌
         $('.bullit li').eq(w).css({
             backgroundColor : 'white'
@@ -59,17 +142,132 @@ function Main(props){
         if(w == 1){
             $('.left1').css({
                 position: 'absolute',
-                width: '25%',
-                bottom: '10%'
+                width: '20%',
+                top : '',
+                bottom: '10%',
+                zIndex : 1,
+                aspectRatio : 'auto'
+            })
+            $('.left2').css({
+                position: 'absolute',
+                width: '20%',
+                top : '',
+                bottom: '5%',
+                left : '3%',
+                aspectRatio : 'auto'
             })
             $('.right1').css({
                 position: 'absolute',
-                top: '10%',
+                top: '50%',
+                right: '5%',
+                width: '20%',
+                transform : 'translateY(-50%)',
+                zIndex : 1,
+                aspectRatio : 'auto'
+            })
+            $('.right2').css({
+                position: 'absolute',
+                top: '60%',
                 right: '0%',
-                width: '25%'
+                width: '20%',
+                transform : 'translateY(-50%)',
+                aspectRatio : 'auto',
+                zIndex : 0
             })
         }
-        if(w == 2) console.log('2화면')
+
+        if(w == 2){
+            setTimeout(()=>{
+                $('.left1').css({
+                    opacity : 1,
+                    transition : '.5s',
+                    width: '25%',
+                    top : '0%',
+                    bottom: '',
+                    zIndex : 1,
+                    aspectRatio : 1/1.2,
+                    position: 'absolute',
+                })
+            },500)
+            setTimeout(()=>{
+                $('.left2').css({
+                    opacity : 1,
+                    transition : ' .5s .1s',
+                    position: 'absolute',
+                    width: '28%',
+                    bottom: '-1%',
+                    left : '2%',
+                })
+            },1000)
+            setTimeout(()=>{
+                $('.right1').css({
+                    transition : '.5s',
+                    position: 'absolute',
+                    top: '0%',
+                    right: '0%',
+                    width: '22%',
+                    transform : 'translateY(0%)',
+                    zIndex : 3,
+                    aspectRatio : 1/1.5,
+                    opacity : 1
+                })
+                $('.right2').css({
+                    transition : '.5s',
+                    position: 'absolute',
+                    top: '0%',
+                    right: '0%',
+                    width: '22%',
+                    transform : 'translateY(0%)',
+                    zIndex : 2,
+                    aspectRatio : 1/1.5,
+                    opacity : 1
+                })
+                $('.right3').css({
+                    transition : '.5s',
+                    position: 'absolute',
+                    top: '0%',
+                    right: '0%',
+                    width: '22%',
+                    transform : 'translateY(0%)',
+                    zIndex : 2,
+                    aspectRatio : 1/1.5,
+                    opacity : 1
+                })
+            },1500)
+            setTimeout(()=>{
+                $('.right1').css({
+                    position: 'absolute',
+                    top: '15%',
+                    right: '10%',
+                    width: '22%',
+                    transform : 'translateY(0%)',
+                    zIndex : 4,
+                    aspectRatio : 1/1.5,
+                    opacity : 1
+                })
+                $('.right2').css({
+                    position: 'absolute',
+                    top: '10%',
+                    right: '5%',
+                    width: '22%',
+                    transform : 'translateY(0%)',
+                    zIndex : 3,
+                    aspectRatio : 1/1.5,
+                    opacity : 1
+                })  
+                $('.right3').css({
+                    position: 'absolute',
+                    top: '0%',
+                    right: '0%',
+                    width: '22%',
+                    transform : 'translateY(0%)',
+                    aspectRatio : 1/1.5,
+                    opacity : 1
+                })
+
+
+            },2500)
+        }
         if(w == 3) console.log('3화면')
         if(w == 4) console.log('4화면')
         if(w == 5) console.log('5화면')
@@ -84,8 +282,100 @@ function Main(props){
                 backgroundColor : 'black'
             })
             // 화면에따른 애니메이션 초기화 값 저장공간
-            if(w == 1) console.log('1화면')
-            if(w == 2) console.log('2화면')
+            if(w == 1){
+                $('.left1').css({
+                    transition : 'none',
+                    position: 'absolute',
+                    width: '20%',
+                    top : '',
+                    bottom: '10%',
+                    zIndex : 1,
+                    aspectRatio : 'auto'
+                })
+                $('.left2').css({
+                    transition : 'none',
+                    position: 'absolute',
+                    width: '20%',
+                    top : '',
+                    bottom: '5%',
+                    left : '3%',
+                    aspectRatio : 'auto'
+                })
+                $('.right1').css({
+                    transition : 'none',
+                    position: 'absolute',
+                    top: '50%',
+                    right: '5%',
+                    width: '20%',
+                    transform : 'translateY(-50%)',
+                    zIndex : 1,
+                    aspectRatio : 'auto'
+                })
+                $('.right2').css({
+                    transition : 'none',
+                    position: 'absolute',
+                    top: '60%',
+                    right: '0%',
+                    width: '20%',
+                    transform : 'translateY(-50%)',
+                    aspectRatio : 'auto',
+                    zIndex : 0
+                })
+            }
+            if(w == 2){
+                $('.left1').css({
+                    transition : 'none',
+                    position: 'absolute',
+                    width: '0%',
+                    height : 'auto',
+                    top : '0%',
+                    bottom: '',
+                    zIndex : 1,
+                    aspectRatio : 1/1.2,
+                    opacity : 0
+                })
+                $('.left2').css({
+                    transition : 'none',
+                    position: 'absolute',
+                    width: '0%',
+                    height : 'auto',
+                    bottom: '-1%',
+                    left : '2%',
+                    opacity : 0
+                })
+                $('.right1').css({
+                    transition : 'none',
+                    position: 'absolute',
+                    top: '0%',
+                    right: '0%',
+                    width: '22%',
+                    transform : 'translateY(0%)',
+                    zIndex : 2,
+                    aspectRatio : 1/1.5,
+                    opacity : 0
+                })
+                $('.right2').css({
+                    transition : 'none',
+                    position: 'absolute',
+                    top: '0%',
+                    right: '0%',
+                    width: '22%',
+                    transform : 'translateY(0%)',
+                    zIndex : 1,
+                    aspectRatio : 1/1.5,
+                    opacity : 0
+                })
+                $('.right3').css({
+                    transition : 'none',
+                    position: 'absolute',
+                    top: '0%',
+                    right: '0%',
+                    width: '22%',
+                    transform : 'translateY(0%)',
+                    aspectRatio : 1/1.5,
+                    opacity : 0
+                })
+            }
             if(w == 3) console.log('3화면')
             if(w == 4) console.log('4화면')
             if(w == 5) console.log('5화면')
@@ -129,7 +419,7 @@ function Main(props){
                         </div>
                     {
                         copy[w - 1].left3 != '' ?
-                        <div className='left2'>
+                        <div className='left3'>
                             <img src={copy[w - 1].left3} />
                         </div>
                         : null
@@ -137,12 +427,12 @@ function Main(props){
                     <div className='right1'>
                         <img src={copy[w - 1].right1} />
                     </div>
-                    <div className='right1'>
+                    <div className='right2'>
                         <img src={copy[w - 1].right2} />
                     </div>
                     {
                         copy[w - 1].right3 != '' ?
-                        <div className='left2'>
+                        <div className='right3'>
                             <img src={copy[w - 1].right3} />
                         </div>
                         : null

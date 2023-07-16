@@ -31,7 +31,7 @@ function Layout(props){
         }
         if(pjsoga == 0){
             $('.layout_header_ul').css({
-                zIndex : 1
+                zIndex : 10
             })
         }
     },[pjsoga])
