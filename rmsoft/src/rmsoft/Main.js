@@ -48,13 +48,49 @@ function Main(props){
     }
 
     useEffect(()=>{
+        // 리턴에 있는거 실행되고 나서 실행
+
+        // 불릿 알맞는거 색칠해줌
         $('.bullit li').eq(w).css({
             backgroundColor : 'white'
         })
+
+        // 화면에따른 애니메이션 실행값 저장공간
+        if(w == 1){
+            $('.left1').css({
+                position: 'absolute',
+                width: '25%',
+                bottom: '10%'
+            })
+            $('.right1').css({
+                position: 'absolute',
+                top: '10%',
+                right: '0%',
+                width: '25%'
+            })
+        }
+        if(w == 2) console.log('2화면')
+        if(w == 3) console.log('3화면')
+        if(w == 4) console.log('4화면')
+        if(w == 5) console.log('5화면')
+        if(w == 6) console.log('6화면')
+        if(w == 7) console.log('7화면')
+
+
+        // 제일먼저 실행될코드
         return () => {
+            // 불릿 색칠 초기화
             $('.bullit li').css({
                 backgroundColor : 'black'
             })
+            // 화면에따른 애니메이션 초기화 값 저장공간
+            if(w == 1) console.log('1화면')
+            if(w == 2) console.log('2화면')
+            if(w == 3) console.log('3화면')
+            if(w == 4) console.log('4화면')
+            if(w == 5) console.log('5화면')
+            if(w == 6) console.log('6화면')
+            if(w == 7) console.log('7화면')
         }
     },[w])
 
@@ -80,19 +116,42 @@ function Main(props){
                 :
                 // console.log(pofoldata[w])
                 <>
-                <div className='main_mainbx' 
-                style={{
-                    backgroundColor : copy[w - 1].bgc,
-                    color : copy[w - 1].font,
-                    borderColor : copy[w - 1].bdc
-                }}>
-                    <h4>{copy[w - 1].title}</h4>
-                    <p>{copy[w - 1].language}</p>
-                    <p>{copy[w - 1].desc}</p>
+                <div className='main_mainbx'>
+                    <div>
+                        <img src={copy[w - 1].txt} />
+                    </div>
                 </div>
+                    <div className='left1'>
+                        <img src={copy[w - 1].left1} />
+                    </div>
+                    <div className='left2'>
+                            <img src={copy[w - 1].left2} />
+                        </div>
+                    {
+                        copy[w - 1].left3 != '' ?
+                        <div className='left2'>
+                            <img src={copy[w - 1].left3} />
+                        </div>
+                        : null
+                    }
+                    <div className='right1'>
+                        <img src={copy[w - 1].right1} />
+                    </div>
+                    <div className='right1'>
+                        <img src={copy[w - 1].right2} />
+                    </div>
+                    {
+                        copy[w - 1].right3 != '' ?
+                        <div className='left2'>
+                            <img src={copy[w - 1].right3} />
+                        </div>
+                        : null
+                    }
                 </>
             }
 
+
+            {/* 인디케이터 */}
             <ul className='bullit'>
                 <li onClick={()=>{setW(0)}}></li>
                 {
@@ -105,9 +164,14 @@ function Main(props){
                     )
                 }
             </ul>
+            {/* 인디케이터 */}
+
+            {/* 스크롤 이미지 */}
+            <div className='mit'>
+                <img src='./../images/scroll.png' />
+            </div>
+            {/* 스크롤 이미지 */}
         </section>
-        {/* 빈루트를 만들고 JS로드 함수 포함 */}
-        {jqFn()}
         </>
         
     )
