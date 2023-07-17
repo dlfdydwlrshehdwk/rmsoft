@@ -25,11 +25,15 @@ function Main(props){
     let a = useSelector((state)=>{return state})
     let dispatch = useDispatch()
     let [w,setW] = useState(0)
-    
-    {
-        let t = 0;
-        $('body').on('wheel',function(e){
+    let [t, setT] = useState(1)
 
+
+    {
+
+        $('body').on('wheel',function(e){
+            console.log(t)
+            if(t) return;
+            console.log(t)
             let d = e.originalEvent.wheelDelta
             
             if(d == -120){
@@ -56,14 +60,24 @@ function Main(props){
             backgroundColor : 'white'
         })
 
-        let aaa;
-        let bbb;
+        var aaa;
+        var bbb;
         clearTimeout(aaa)
         clearTimeout(bbb)
+        $('.left1').off('setTimeout')
         // clearTimeout(b)
         // 화면에따른 애니메이션 실행값 저장공간
+        if(w == 0) setT(0)
+        else setT(1)
         if(w == 1){
+
+            setTimeout(()=>{
+                setT(0)
+            },3000)
             
+                // setTimeout(()=>{
+                //     setT(0)
+                // },3000)
 
             function ani1(){
                 setTimeout(()=>{
@@ -77,7 +91,6 @@ function Main(props){
                         aspectRatio : 'auto',
                         opacity: 1
                     })
-    
     
                     $('.right1').css({
                         transition : '.5s',
@@ -133,9 +146,11 @@ function Main(props){
                 },2000)
 
             }
-
-            aaa = () => setTimeout(ani1,1)
-            aaa()
+            function astart(){
+                console.log('시작a')
+                aaa = setTimeout(()=> ani1(),1)
+            }
+            astart()
         }
 
         if(w == 2){
@@ -236,8 +251,11 @@ function Main(props){
                     })
                 },3000)
             }
-            bbb = () => setTimeout(ani2,1)
-            bbb()
+            function bstart(){
+                console.log('시작b')
+                bbb = setTimeout(ani2,1)
+            }
+            bstart()
         }
         if(w == 3){
             setTimeout(()=>{
@@ -448,6 +466,9 @@ function Main(props){
             
             // 화면에따른 애니메이션 초기화 값 저장공간
             if(w == 1){
+
+                
+
                 $('.left1').css({
                     transition : 'none',
                     position: 'absolute',
