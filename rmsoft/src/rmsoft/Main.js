@@ -214,9 +214,80 @@ function Main(props){
 
             },2500)
         }
-        if(w == 3) console.log('3화면')
-        if(w == 4) console.log('4화면')
-        if(w == 5) console.log('5화면')
+        if(w == 3){
+
+        }
+        if(w == 4){
+            setTimeout(()=>{
+                $('.left1').css({
+                    transition : 'opacity .4s',
+                    position : 'absolute',
+                    top : '20%',
+                    left : '0%',
+                    width  : '20%',
+                    opacity : 1
+                })
+            },1000)
+            setTimeout(()=>{
+                $('.right1').css({
+                    transition : 'opacity .4s',
+                    position : 'absolute',
+                    top : '8%',
+                    right : '0%',
+                    width : '26%',
+                    opacity : 1,
+                })
+            },1500)
+            setTimeout(()=>{
+                $('.right2').css({
+                    transition : 'opacity .4s',
+                    position : 'absolute',
+                    right : '14%',
+                    width : '20%',
+                    bottom  : '7%',
+                    opacity : 1,
+                })
+            },2000)
+        }
+        if(w == 5){
+            $('.left1').css({
+                opacity : 1,
+                position : 'absolute',
+                top : '0%',
+                left : '15%',
+                width : '10%'
+            })
+            $('.left2').css({
+                opacity : 1,
+                position : 'absolute',
+                top : '',
+                bottom : '3%',
+                left : '3%',
+                width : '20%'
+            })
+
+            $('.right1').css({
+                opacity : 1,
+                position : 'absolute',
+                top : '8%',
+                right : '0%',
+                width : '35%',
+            })
+            $('.right2').css({
+                opacity : 1,
+                position : 'absolute',
+                bottom : '0%',
+                right : '10%',
+                width : '10%',
+            })
+            $('.right3').css({
+                opacity : 1,
+                position : 'absolute',
+                bottom : '0%',
+                right : '0%',
+                width : '10%',
+            })
+        }
         if(w == 6) console.log('6화면')
         if(w == 7) console.log('7화면')
 
@@ -347,7 +418,7 @@ function Main(props){
                     top : '20%',
                     left : '0%',
                     width  : '20%',
-                    opacity : 1
+                    opacity : 0,
                 })
                 $('.right1').css({
                     transition : 'none',
@@ -355,7 +426,7 @@ function Main(props){
                     top : '8%',
                     right : '0%',
                     width : '26%',
-                    opacity : 1,
+                    opacity : 0,
                 })
                 $('.right2').css({
                     transition : 'none',
@@ -363,7 +434,7 @@ function Main(props){
                     right : '14%',
                     width : '20%',
                     bottom  : '7%',
-                    opacity : 1,
+                    opacity : 0,
                 })
             }
 
