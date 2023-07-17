@@ -25,31 +25,54 @@ function Main(props){
     let a = useSelector((state)=>{return state})
     let dispatch = useDispatch()
     let [w,setW] = useState(0)
-    let [t, setT] = useState(1)
+    let [tt, setTt] = useState(0)
+    
 
 
-    {
+    function wheelFn(){
+
+        let asd = 0
 
         $('body').on('wheel',function(e){
-            console.log(t)
-            if(t) return;
-            console.log(t)
+            console.log('asd',asd)
+            if(asd) return
+            console.log('asd',asd)
+            asd = 1;
+            setTt(1)
+            setTimeout(()=>{
+                setTt(0)
+            },3000)
+
+            console.log('tt',tt)
+            if(tt) return;
+            console.log('tt',tt)
+
             let d = e.originalEvent.wheelDelta
-            
+
             if(d == -120){
-                if(w >= 7) setW(7)
-                else setW(w = w + 1)
+                if(w >= 7){
+                    setW(7)
+                }
+                    
+                else{
+                    setW(w = w + 1)
+
+                } 
             }
 
             else if(d == 120){
                 if(w <= 0) setW(0)
                 else setW(w = w - 1)
             }
-
-
             // console.log('휠값은 : ',w)
         })
     }
+
+
+
+
+    wheelFn()
+    console.log('w',w)
 
     useEffect(()=>{
         // 리턴에 있는거 실행되고 나서 실행
@@ -67,17 +90,8 @@ function Main(props){
         $('.left1').off('setTimeout')
         // clearTimeout(b)
         // 화면에따른 애니메이션 실행값 저장공간
-        if(w == 0) setT(0)
-        else setT(1)
         if(w == 1){
 
-            setTimeout(()=>{
-                setT(0)
-            },3000)
-            
-                // setTimeout(()=>{
-                //     setT(0)
-                // },3000)
 
             function ani1(){
                 setTimeout(()=>{
@@ -147,7 +161,6 @@ function Main(props){
 
             }
             function astart(){
-                console.log('시작a')
                 aaa = setTimeout(()=> ani1(),1)
             }
             astart()
@@ -252,7 +265,6 @@ function Main(props){
                 },3000)
             }
             function bstart(){
-                console.log('시작b')
                 bbb = setTimeout(ani2,1)
             }
             bstart()
@@ -467,8 +479,6 @@ function Main(props){
             // 화면에따른 애니메이션 초기화 값 저장공간
             if(w == 1){
 
-                
-
                 $('.left1').css({
                     transition : 'none',
                     position: 'absolute',
@@ -574,13 +584,13 @@ function Main(props){
                 })
             }
             if(w == 3){
-                console.log('3화면')
+                // console.log('3화면')
                 $('.main_mainbx').css({
                     opacity : 0
                 })
             }
             if(w == 4){ 
-                console.log('4화면')
+                // console.log('4화면')
                 $('.left1').css({
                     transition : 'none',
                     position : 'absolute',
@@ -611,7 +621,7 @@ function Main(props){
             }
 
             if(w == 5){ 
-                console.log('5화면')
+                // console.log('5화면')
                 $('.left1').css({
                     opacity : 1,
                     position : 'absolute',
@@ -661,7 +671,7 @@ function Main(props){
 
             }
             if(w == 6){ 
-                console.log('6화면')
+                // console.log('6화면')
                 $('.left1').css({
                     opacity : 1,
                     position : 'absolute',
@@ -692,7 +702,7 @@ function Main(props){
                 })
             }
             if(w == 7){ 
-                console.log('7화면')
+                // console.log('7화면')
                 $('.left1').css({
                     position: 'absolute',
                     bottom: '11%',
@@ -720,6 +730,12 @@ function Main(props){
             }
         }
     },[w])
+
+    // useEffect(()=>{
+    //     console.log('tt는',tt)
+    //     console.log('w는',w)
+        
+    // })
 
     return(
         <>
@@ -814,6 +830,9 @@ function Main(props){
             </div>
             {/* 스크롤 이미지 */}
         </section>
+        {
+            () =>{ wheelFn() }
+        }
         </>
         
     )
