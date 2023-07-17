@@ -19,9 +19,7 @@ function Layout(props){
 
     let a = useSelector((state) => state)
 
-    const [soga, setSoga] = useState([1,1])
     const [pjsoga , setPjsoga] = useState(0)
-    const [desc, setDesc] = useState('')
 
     useEffect(()=>{
         if(pjsoga == 1){
@@ -54,11 +52,6 @@ function Layout(props){
                                 <img src='./../images/logo.png'/>
                             {/* </Link> */}
                         </li>
-                        <li className='menu'>
-                            <button onClick={()=>{setPjsoga(1)}}> 
-                                MENU
-                            </button>
-                        </li>
                     </ul>
                 </nav>
             </header>
@@ -72,111 +65,6 @@ function Layout(props){
         {/* 3.하단영역 */}
         <footer className="info">
         </footer>
-
-
-
-
-        {
-                pjsoga == 1 &&
-            
-
-            <aside className='side'>
-                <ul>
-
-                    {/* 소개글 */}
-                    <li>
-                        <div className='flexbx'>
-                            <div>소개글</div>
-                            {
-                                soga[0] == 1 &&
-                                <div onClick={()=>{
-                                    let copy = [...soga]
-                                    copy[0] = 0
-                                    setSoga(copy)
-                                }}>－</div>
-                            }
-                            {
-                                soga[0] == 0 &&
-                                <div onClick={()=>{
-                                    let copy = [...soga]
-                                    copy[0] = 1
-                                    setSoga(copy)
-                                }}>＋</div>
-                            }
-                        </div>
-                        {
-                            soga[0] == 1 &&
-                            <div className='txtbx'>
-                                <p>
-                                {pofoldata.length}개의 프로젝트로 이루어져있는
-                                </p>
-                                <p>
-                                김동호의 포트폴리오 사이트입니다.<br/>
-                                (프론트엔드 취업준비중)
-                                </p>
-                            </div>
-                        }
-                    </li>
-
-
-
-
-
-
-
-                    <li>
-                        <div className='flexbx'>
-                            <div>프로젝트 소개</div>
-                            {
-                                soga[1] == 0 &&
-                                <div onClick={()=>{
-                                    let copy = [...soga];
-                                    copy[1] = 1;
-                                    setSoga(copy)
-                                }}>＋</div>
-                            }
-                            {
-                                soga[1] == 1 &&
-                                <div onClick={()=>{
-                                    let copy = [...soga];
-                                    copy[1] = 0;
-                                    setSoga(copy)
-                                }}>－</div>
-                            }
-                        </div>
-                        {
-                            soga[1] == 1 &&
-                            <div className='sogabtnbx'>
-                            {
-                                pofoldata.map((x,i)=>
-                                <button onClick={()=>{setDesc(i)}} key={i}>{x.title}</button>
-                                )
-                            }
-                            </div>
-                        }
-                        <div className='descbx'>
-                            {
-                                desc !== '' && soga[1] == 1 &&
-                                <span>{pofoldata[desc].desc}</span>
-                            }
-                        </div>
-
-
-                    </li>
-
-
-
-
-                    {/* 연락처 */}
-                    <li>
-                        <div>
-                            연락처 : fkrmsk147@naver.com
-                        </div>
-                    </li>
-                </ul>
-                <div className='xbtn' onClick={()=>{setPjsoga(0)}}>×</div>
-            </aside>
-            }
         </>
         
     )
