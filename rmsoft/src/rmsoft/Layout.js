@@ -46,13 +46,6 @@ function Layout(props){
 
         <header>
                 <nav>
-                    <ul className='layout_header_ul'>
-                        <li className='logo'>
-                            {/* <Link to="/main"> */}
-                                <img src='./../images/logo.png'/>
-                            {/* </Link> */}
-                        </li>
-                    </ul>
                 </nav>
             </header>
 

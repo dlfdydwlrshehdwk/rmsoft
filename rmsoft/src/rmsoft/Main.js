@@ -76,6 +76,14 @@ function Main(props){
             backgroundColor : 'white'
         })
 
+        if(w == 0){
+            setTimeout(()=>{
+                $('.main_mainbx').css({
+                    transition : '1s',
+                    opacity : 1
+                })
+            },1000)
+        }
         // 화면에따른 애니메이션 실행값 저장공간
         if(w == 1){
                 setTimeout(()=>{
@@ -295,9 +303,7 @@ function Main(props){
         }
         if(w == 5){
             setTimeout(()=>{
-
-            
-            $('.e_d_left1').css({
+            $('.e_left1').css({
                 transition : '.5s',
                 opacity : 1,
                 position : 'absolute',
@@ -306,7 +312,7 @@ function Main(props){
                 width : '10%',
                 transform: 'translateY(0%)'
             })
-            $('.e_d_left2').css({
+            $('.e_left2').css({
                 transition : '.5s',
                 opacity : 1,
                 position : 'absolute',
@@ -317,7 +323,7 @@ function Main(props){
                 transform: 'translate(0%)'
             })
 
-            $('.e_d_right1').css({
+            $('.e_right1').css({
                 transition : '.5s',
                 opacity : 1,
                 position : 'absolute',
@@ -326,7 +332,7 @@ function Main(props){
                 width : '35%',
                 transform: 'translateX(0%)'
             })
-            $('.e_d_right2').css({
+            $('.e_right2').css({
                 transition : '.5s',
                 opacity : 1,
                 position : 'absolute',
@@ -335,8 +341,8 @@ function Main(props){
                 width : '10%',
                 transform: 'translateY(0%)'
             })
-            $('.e_d_right3').css({
-                transition : '1s',
+            $('.e_right3').css({
+                transition : '.5s',
                 opacity : 1,
                 position : 'absolute',
                 bottom : '0%',
@@ -728,9 +734,7 @@ function Main(props){
                 w === 0 &&
                 <>
                 <div className='main_mainbx'>
-                    <h4>안녕하세요</h4>
-                    <p>김동호의 포폴사이트</p>
-                    <p>마우스 휠을하여 다른 포폴을 만나보셈</p>
+                    <img src='./../images/txt.png'/>
                 </div>
                 </>
             }
@@ -942,6 +946,8 @@ function Main(props){
                     }
                 </>
             }
+
+            {/* 디씨 */}
             {
                 w == 5 &&
                 <>
@@ -994,6 +1000,8 @@ function Main(props){
                     }
                 </>
             }
+
+            {/* 보구 */}
             {
                 w == 6 &&
                 <>
@@ -1046,6 +1054,8 @@ function Main(props){
                     }
                 </>
             }
+
+            {/* 도깨비 */}
             {
                 w == 7 &&
                 <>
