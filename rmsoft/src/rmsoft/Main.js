@@ -34,9 +34,7 @@ function Main(props){
     console.log('ab',ab.intro)
 
 
-    function hdhd(){
-        
-    }
+    console.log(copy)
 
 
 

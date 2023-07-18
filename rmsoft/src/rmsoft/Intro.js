@@ -24,7 +24,7 @@ function Intro(props){
                     <h1>김동호의 포트폴리오</h1>
                 </div>
                 <div className='intro_rmimgbx'>
-                    <img src='./images/test.png'/>
+                    <img src='./../images/test.png'/>
                 </div>
                 <button onClick={()=>{
                     dispatch(changeIntro())}}>Show portfolio</button>
