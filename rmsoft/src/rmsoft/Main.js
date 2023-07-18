@@ -98,6 +98,8 @@ function Main(props){
             },1000)
         }
         // 화면에따른 애니메이션 실행값 저장공간
+
+        // 휠라
         if(w == 1){
                 setTimeout(()=>{
                     $('.a_left1').css({
@@ -165,9 +167,8 @@ function Main(props){
                 },2000)
             
         }
-
+        // 앤드마크
         if(w == 2){
-
                 setTimeout(()=>{
                     $('.b_left1').css({
                         opacity : 1,
@@ -267,115 +268,78 @@ function Main(props){
                     })
                 },3000)
         }
-
+        // 디씨
         if(w == 3){
             setTimeout(()=>{
-                $('.main_mainbx').css({
-                    transition : '1s',
-                    opacity : 1
-                })
-            },1000)
-
-        }
-
-        if(w == 4){
-            setTimeout(()=>{
-                $('.d_left1').css({
-                    transition : 'opacity .4s',
+                $('.c_left1').css({
+                    transition : '.5s',
+                    opacity : 1,
                     position : 'absolute',
-                    top : '20%',
-                    left : '0%',
-                    width  : '20%',
-                    opacity : 1
+                    top : '0%',
+                    left : '15%',
+                    width : '10%',
+                    transform: 'translateY(0%)'
                 })
-            },1000)
-            setTimeout(()=>{
-                $('.d_right1').css({
-                    transition : 'opacity .4s',
+                $('.c_left2').css({
+                    transition : '.5s',
+                    opacity : 1,
+                    position : 'absolute',
+                    top : '',
+                    bottom : '3%',
+                    left : '3%',
+                    width : '20%',
+                    transform: 'translate(0%)'
+                })
+    
+                $('.c_right1').css({
+                    transition : '.5s',
+                    opacity : 1,
                     position : 'absolute',
                     top : '8%',
                     right : '0%',
-                    width : '26%',
-                    opacity : 1,
+                    width : '35%',
+                    transform: 'translateX(0%)'
                 })
-            },1500)
-            setTimeout(()=>{
-                $('.d_right2').css({
-                    transition : 'opacity .4s',
+                $('.c_right2').css({
+                    transition : '.5s',
+                    opacity : 1,
                     position : 'absolute',
-                    right : '14%',
-                    width : '20%',
-                    bottom  : '7%',
-                    opacity : 1,
+                    bottom : '0%',
+                    right : '10%',
+                    width : '10%',
+                    transform: 'translateY(0%)'
                 })
-            },2000)
+                $('.c_right3').css({
+                    transition : '.5s',
+                    opacity : 1,
+                    position : 'absolute',
+                    bottom : '0%',
+                    right : '0%',
+                    width : '10%',
+                    transform: 'translateY(0%)'
+                    })
+                },1000)
+                setTimeout(()=>{
+                    $('.main_mainbx').css({
+                        transition : '1s',
+                        opacity : 1
+                    })
+                },1500)
+        }
+        // 비타
+        if(w == 4){
             setTimeout(()=>{
                 $('.main_mainbx').css({
                     transition : '1s',
                     opacity : 1
-                })
-            },2500)
-        }
-        if(w == 5){
-            setTimeout(()=>{
-            $('.e_left1').css({
-                transition : '.5s',
-                opacity : 1,
-                position : 'absolute',
-                top : '0%',
-                left : '15%',
-                width : '10%',
-                transform: 'translateY(0%)'
-            })
-            $('.e_left2').css({
-                transition : '.5s',
-                opacity : 1,
-                position : 'absolute',
-                top : '',
-                bottom : '3%',
-                left : '3%',
-                width : '20%',
-                transform: 'translate(0%)'
-            })
-
-            $('.e_right1').css({
-                transition : '.5s',
-                opacity : 1,
-                position : 'absolute',
-                top : '8%',
-                right : '0%',
-                width : '35%',
-                transform: 'translateX(0%)'
-            })
-            $('.e_right2').css({
-                transition : '.5s',
-                opacity : 1,
-                position : 'absolute',
-                bottom : '0%',
-                right : '10%',
-                width : '10%',
-                transform: 'translateY(0%)'
-            })
-            $('.e_right3').css({
-                transition : '.5s',
-                opacity : 1,
-                position : 'absolute',
-                bottom : '0%',
-                right : '0%',
-                width : '10%',
-                transform: 'translateY(0%)'
                 })
             },1000)
-            setTimeout(()=>{
-                $('.main_mainbx').css({
-                    transition : '1s',
-                    opacity : 1
-                })
-            },1500)
         }
-        if(w == 6){
+
+        // 디씨였었고 보그여야함
+        if(w == 5){
             setTimeout(()=>[
-                $('.f_left1').css({
+                $('.e_left1').css({
                     transition : '.4s',
                     opacity : 1,
                     position : 'absolute',
@@ -387,7 +351,7 @@ function Main(props){
                 })
             ],1000)
             setTimeout(()=>{
-                $('.f_left2').css({
+                $('.e_left2').css({
                     transition : '.4s',
                     opacity : 1,
                     position : 'absolute',
@@ -398,7 +362,7 @@ function Main(props){
                 })
             },1500)
             setTimeout(()=>{
-                $('.f_right1').css({
+                $('.e_right1').css({
                     transition : '.4s',
                     position:'absolute',
                     top : '',
@@ -415,6 +379,47 @@ function Main(props){
                 })
             },2500)
         }
+        // 페스카로
+        if(w == 6){
+            setTimeout(()=>{
+                $('.f_left1').css({
+                    transition : 'opacity .4s',
+                    position : 'absolute',
+                    top : '20%',
+                    left : '0%',
+                    width  : '20%',
+                    opacity : 1
+                })
+            },1000)
+            setTimeout(()=>{
+                $('.f_right1').css({
+                    transition : 'opacity .4s',
+                    position : 'absolute',
+                    top : '8%',
+                    right : '0%',
+                    width : '26%',
+                    opacity : 1,
+                })
+            },1500)
+            setTimeout(()=>{
+                $('.f_right2').css({
+                    transition : 'opacity .4s',
+                    position : 'absolute',
+                    right : '14%',
+                    width : '20%',
+                    bottom  : '7%',
+                    opacity : 1,
+                })
+            },2000)
+            setTimeout(()=>{
+                $('.main_mainbx').css({
+                    transition : '1s',
+                    opacity : 1
+                })
+            },2500)
+
+        }
+        // 도깨비
         if(w == 7){
             setTimeout(()=>{
                 $('.g_left1').css({
@@ -599,45 +604,12 @@ function Main(props){
                     opacity : 0
                 })
             }
+
+            // 디씨
             if(w == 3){
                 // console.log('3화면')
-                $('.main_mainbx').css({
-                    opacity : 0
-                })
-            }
-            if(w == 4){ 
-                // console.log('4화면')
-                $('.d_left1').css({
-                    transition : 'none',
-                    position : 'absolute',
-                    top : '20%',
-                    left : '0%',
-                    width  : '20%',
-                    opacity : 0,
-                })
-                $('.d_right1').css({
-                    transition : 'none',
-                    position : 'absolute',
-                    top : '8%',
-                    right : '0%',
-                    width : '26%',
-                    opacity : 0,
-                })
-                $('.d_right2').css({
-                    transition : 'none',
-                    position : 'absolute',
-                    right : '14%',
-                    width : '20%',
-                    bottom  : '7%',
-                    opacity : 0,
-                })
-                $('.main_mainbx').css({
-                    opacity : 0
-                })
-            }
-            if(w == 5){ 
-                // console.log('5화면')
-                $('.e_left1').css({
+                // 이거 디씨
+                $('.c_left1').css({
                     opacity : 1,
                     position : 'absolute',
                     top : '0%',
@@ -645,7 +617,7 @@ function Main(props){
                     width : '10%',
                     transform: 'translateY(-100%)'
                 })
-                $('.e_left2').css({
+                $('.c_left2').css({
                     opacity : 1,
                     position : 'absolute',
                     top : '',
@@ -655,7 +627,7 @@ function Main(props){
                     width : '20%'
                 })
 
-                $('.e_right1').css({
+                $('.c_right1').css({
                     opacity : 1,
                     position : 'absolute',
                     top : '8%',
@@ -663,7 +635,7 @@ function Main(props){
                     width : '35%',
                     transform: 'translateX(100%)'
                 })
-                $('.e_right2').css({
+                $('.c_right2').css({
                     opacity : 1,
                     position : 'absolute',
                     bottom : '0%',
@@ -671,7 +643,7 @@ function Main(props){
                     width : '10%',
                     transform: 'translateY(100%)'
                 })
-                $('.e_right3').css({
+                $('.c_right3').css({
                     opacity : 1,
                     position : 'absolute',
                     bottom : '0%',
@@ -682,11 +654,20 @@ function Main(props){
                 $('.main_mainbx').css({
                     opacity : 0
                 })
+            }
+            // 비타
+            if(w == 4){ 
+                // console.log('4화면')
+                $('.main_mainbx').css({
+                    opacity : 0
+                })
 
             }
-            if(w == 6){ 
-                // console.log('6화면')
-                $('.f_left1').css({
+            // 보그
+            if(w == 5){ 
+                // console.log('5화면')
+                // 이거 보그
+                $('.e_left1').css({
                     opacity : 1,
                     position : 'absolute',
                     top :'0%',
@@ -695,7 +676,7 @@ function Main(props){
                     bottom : '',
                     transform : 'translateY(-100%)'
                 })
-                $('.f_left2').css({
+                $('.e_left2').css({
                     opacity : 1,
                     position : 'absolute',
                     bottom :'3%',
@@ -703,13 +684,47 @@ function Main(props){
                     width : '16%',
                     transform : 'translateX(-100%)'
                 })
-                $('.f_right1').css({
+                $('.e_right1').css({
                     position:'absolute',
                     top : '',
                     bottom: '2%',
                     right: '2%',
                     width: '17%',
                     opacity: 0,
+                })
+                $('.main_mainbx').css({
+                    opacity : 0
+                })
+
+            }
+            if(w == 6){ 
+                // console.log('6화면')
+                
+
+                // 이거 페스카로
+                $('.f_left1').css({
+                    transition : 'none',
+                    position : 'absolute',
+                    top : '20%',
+                    left : '0%',
+                    width  : '20%',
+                    opacity : 0,
+                })
+                $('.f_right1').css({
+                    transition : 'none',
+                    position : 'absolute',
+                    top : '8%',
+                    right : '0%',
+                    width : '26%',
+                    opacity : 0,
+                })
+                $('.f_right2').css({
+                    transition : 'none',
+                    position : 'absolute',
+                    right : '14%',
+                    width : '20%',
+                    bottom  : '7%',
+                    opacity : 0,
                 })
                 $('.main_mainbx').css({
                     opacity : 0
@@ -794,7 +809,7 @@ function Main(props){
                 ab.intro == 0 &&
                 <>
                 <div className='main_mainbx'>
-                    <img src='./../images/txt.png'/>
+                    <img style={{height : 'auto'}} src='./../images/txt.png'/>
                 </div>
                 </>
             }
@@ -804,7 +819,7 @@ function Main(props){
                 ab.intro == 1 &&
                 <>
                 <div className='main_mainbx'>
-                    <img src='./../images/txt.png'/>
+                    <img style={{height : 'auto'}} src='./../images/txt.png'/>
                 </div>
                 </>
             }
@@ -812,7 +827,7 @@ function Main(props){
                 w == 1 &&
                 <>
                 <div className='main_mainbx'>
-                    <div>
+                    <div className='tac'>
                         <img src={copy[w - 1].txt} />
                     </div>
                 </div>
@@ -864,7 +879,7 @@ function Main(props){
                 w == 2 &&
                 <>
                 <div className='main_mainbx'>
-                    <div>
+                    <div className='tac'>
                         <img src={copy[w - 1].txt} />
                     </div>
                 </div>
@@ -916,7 +931,7 @@ function Main(props){
                 w == 3 &&
                 <>
                 <div className='main_mainbx'>
-                    <div>
+                    <div className='tac'>
                         <img src={copy[w - 1].txt} />
                     </div>
                 </div>
@@ -968,7 +983,7 @@ function Main(props){
                 w == 4 &&
                 <>
                 <div className='main_mainbx'>
-                    <div>
+                    <div className='tac'>
                         <img src={copy[w - 1].txt} />
                     </div>
                 </div>
@@ -1022,7 +1037,7 @@ function Main(props){
                 w == 5 &&
                 <>
                 <div className='main_mainbx'>
-                    <div>
+                    <div className='tac'>
                         <img src={copy[w - 1].txt} />
                     </div>
                 </div>
@@ -1076,7 +1091,7 @@ function Main(props){
                 w == 6 &&
                 <>
                 <div className='main_mainbx'>
-                    <div>
+                    <div className='tac'>
                         <img src={copy[w - 1].txt} />
                     </div>
                 </div>
@@ -1130,7 +1145,7 @@ function Main(props){
                 w == 7 &&
                 <>
                 <div className='main_mainbx'>
-                    <div>
+                    <div className='tac'>
                         <img src={copy[w - 1].txt} />
                     </div>
                 </div>

@@ -20,10 +20,15 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 330px;
+    width: 400px;
     height: 300px;
 }
-
+.tac{
+    text-align: center;
+}
+.tac > img{
+    height: auto;
+}
 
 
 .bullit{
