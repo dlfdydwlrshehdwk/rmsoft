@@ -26,76 +26,60 @@ function Main(props){
     let dispatch = useDispatch()
     let [w,setW] = useState(0)
     let [tt, setTt] = useState(0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
-
-
+    
     function wheelFn(){
 
-        let asd = 0
-
         $('body').on('wheel',function(e){
-            console.log('asd',asd)
-            if(asd) return
-            console.log('asd',asd)
-            asd = 1;
-            setTt(1)
-            setTimeout(()=>{
-                setTt(0)
-            },3000)
-
-            console.log('tt',tt)
-            if(tt) return;
-            console.log('tt',tt)
 
             let d = e.originalEvent.wheelDelta
 
-            if(d == -120){
+            
+            console.log(d)
+            if(d <= -120){
                 if(w >= 7){
                     setW(7)
                 }
-                    
                 else{
                     setW(w = w + 1)
-
                 } 
             }
-
-            else if(d == 120){
+            else if(d >= 120){
                 if(w <= 0) setW(0)
                 else setW(w = w - 1)
             }
-            // console.log('휠값은 : ',w)
+            setTt(w)
         })
     }
 
-
-
-
     wheelFn()
-    console.log('w',w)
 
     useEffect(()=>{
+        console.log('tt',tt)
         // 리턴에 있는거 실행되고 나서 실행
-        // clearTimeout(a)
-        // clearTimeout(b)
         // 불릿 알맞는거 색칠해줌
         $('.bullit li').eq(w).css({
             backgroundColor : 'white'
         })
 
-        var aaa;
-        var bbb;
-        clearTimeout(aaa)
-        clearTimeout(bbb)
-        $('.left1').off('setTimeout')
-        // clearTimeout(b)
         // 화면에따른 애니메이션 실행값 저장공간
         if(w == 1){
-
-
-            function ani1(){
                 setTimeout(()=>{
-                    $('.left1').css({
+                    $('.a_left1').css({
                         transition : '.5s',
                         position: 'absolute',
                         width: '20%',
@@ -105,8 +89,7 @@ function Main(props){
                         aspectRatio : 'auto',
                         opacity: 1
                     })
-    
-                    $('.right1').css({
+                    $('.a_right1').css({
                         transition : '.5s',
                         position: 'absolute',
                         top: '50%',
@@ -118,19 +101,20 @@ function Main(props){
                         opacity : 1
                     })
                 },1000)
-    
+
+
                 setTimeout(()=>{
-                    $('.left2').css({
+                    $('.a_left2').css({
                         opacity : 1
                     })
     
-                    $('.right2').css({
+                    $('.a_right2').css({
                         opacity : 1
                     })
                 },1100)
     
                 setTimeout(()=>{
-                    $('.left2').css({
+                    $('.a_left2').css({
                         transition : '.5s',
                         position: 'absolute',
                         width: '20%',
@@ -139,8 +123,7 @@ function Main(props){
                         left : '3%',
                         aspectRatio : 'auto',
                     })
-                    
-                    $('.right2').css({
+                    $('.a_right2').css({
                         transition : '.5s',
                         position: 'absolute',
                         top: '60%',
@@ -152,25 +135,19 @@ function Main(props){
                         opacity : 1
                     })
                 },1500)
+
                 setTimeout(()=>{
                     $('.main_mainbx').css({
                         transition : '1s',
                         opacity : 1
                     })
                 },2000)
-
-            }
-            function astart(){
-                aaa = setTimeout(()=> ani1(),1)
-            }
-            astart()
         }
 
         if(w == 2){
-            
-            function ani2(){
+
                 setTimeout(()=>{
-                    $('.left1').css({
+                    $('.b_left1').css({
                         opacity : 1,
                         transition : '.5s',
                         width: '25%',
@@ -181,8 +158,9 @@ function Main(props){
                         position: 'absolute',
                     })
                 },500)
+
                 setTimeout(()=>{
-                    $('.left2').css({
+                    $('.b_left2').css({
                         opacity : 1,
                         transition : ' .5s .1s',
                         position: 'absolute',
@@ -191,8 +169,9 @@ function Main(props){
                         left : '2%',
                     })
                 },1000)
+
                 setTimeout(()=>{
-                    $('.right1').css({
+                    $('.b_right1').css({
                         transition : '.5s',
                         position: 'absolute',
                         top: '0%',
@@ -203,7 +182,7 @@ function Main(props){
                         aspectRatio : 1/1.5,
                         opacity : 1
                     })
-                    $('.right2').css({
+                    $('.b_right2').css({
                         transition : '.5s',
                         position: 'absolute',
                         top: '0%',
@@ -214,7 +193,7 @@ function Main(props){
                         aspectRatio : 1/1.5,
                         opacity : 1
                     })
-                    $('.right3').css({
+                    $('.b_right3').css({
                         transition : '.5s',
                         position: 'absolute',
                         top: '0%',
@@ -226,8 +205,9 @@ function Main(props){
                         opacity : 1
                     })
                 },1500)
+
                 setTimeout(()=>{
-                    $('.right1').css({
+                    $('.b_right1').css({
                         position: 'absolute',
                         top: '14%',
                         right: '10%',
@@ -237,7 +217,7 @@ function Main(props){
                         aspectRatio : 1/1.5,
                         opacity : 1
                     })
-                    $('.right2').css({
+                    $('.b_right2').css({
                         position: 'absolute',
                         top: '7%',
                         right: '5%',
@@ -247,7 +227,7 @@ function Main(props){
                         aspectRatio : 1/1.5,
                         opacity : 1
                     })  
-                    $('.right3').css({
+                    $('.b_right3').css({
                         position: 'absolute',
                         top: '0%',
                         right: '0%',
@@ -257,18 +237,15 @@ function Main(props){
                         opacity : 1
                     })
                 },2500)
+
                 setTimeout(()=>{
                     $('.main_mainbx').css({
                         transition : '1s',
                         opacity : 1
                     })
                 },3000)
-            }
-            function bstart(){
-                bbb = setTimeout(ani2,1)
-            }
-            bstart()
         }
+
         if(w == 3){
             setTimeout(()=>{
                 $('.main_mainbx').css({
@@ -277,9 +254,10 @@ function Main(props){
                 })
             },1000)
         }
+
         if(w == 4){
             setTimeout(()=>{
-                $('.left1').css({
+                $('.d_left1').css({
                     transition : 'opacity .4s',
                     position : 'absolute',
                     top : '20%',
@@ -289,7 +267,7 @@ function Main(props){
                 })
             },1000)
             setTimeout(()=>{
-                $('.right1').css({
+                $('.d_right1').css({
                     transition : 'opacity .4s',
                     position : 'absolute',
                     top : '8%',
@@ -299,7 +277,7 @@ function Main(props){
                 })
             },1500)
             setTimeout(()=>{
-                $('.right2').css({
+                $('.d_right2').css({
                     transition : 'opacity .4s',
                     position : 'absolute',
                     right : '14%',
@@ -319,7 +297,7 @@ function Main(props){
             setTimeout(()=>{
 
             
-            $('.left1').css({
+            $('.e_d_left1').css({
                 transition : '.5s',
                 opacity : 1,
                 position : 'absolute',
@@ -328,7 +306,7 @@ function Main(props){
                 width : '10%',
                 transform: 'translateY(0%)'
             })
-            $('.left2').css({
+            $('.e_d_left2').css({
                 transition : '.5s',
                 opacity : 1,
                 position : 'absolute',
@@ -339,7 +317,7 @@ function Main(props){
                 transform: 'translate(0%)'
             })
 
-            $('.right1').css({
+            $('.e_d_right1').css({
                 transition : '.5s',
                 opacity : 1,
                 position : 'absolute',
@@ -348,7 +326,7 @@ function Main(props){
                 width : '35%',
                 transform: 'translateX(0%)'
             })
-            $('.right2').css({
+            $('.e_d_right2').css({
                 transition : '.5s',
                 opacity : 1,
                 position : 'absolute',
@@ -357,7 +335,7 @@ function Main(props){
                 width : '10%',
                 transform: 'translateY(0%)'
             })
-            $('.right3').css({
+            $('.e_d_right3').css({
                 transition : '1s',
                 opacity : 1,
                 position : 'absolute',
@@ -377,7 +355,7 @@ function Main(props){
         }
         if(w == 6){
             setTimeout(()=>[
-                $('.left1').css({
+                $('.f_left1').css({
                     transition : '.4s',
                     opacity : 1,
                     position : 'absolute',
@@ -389,7 +367,7 @@ function Main(props){
                 })
             ],1000)
             setTimeout(()=>{
-                $('.left2').css({
+                $('.f_left2').css({
                     transition : '.4s',
                     opacity : 1,
                     position : 'absolute',
@@ -400,7 +378,7 @@ function Main(props){
                 })
             },1500)
             setTimeout(()=>{
-                $('.right1').css({
+                $('.f_right1').css({
                     transition : '.4s',
                     position:'absolute',
                     top : '',
@@ -419,7 +397,7 @@ function Main(props){
         }
         if(w == 7){
             setTimeout(()=>{
-                $('.left1').css({
+                $('.g_left1').css({
                     transition : '.4s',
                     position: 'absolute',
                     bottom: '11%',
@@ -429,7 +407,7 @@ function Main(props){
                 })
             },1000)
             setTimeout(()=>{
-                $('.right1').css({
+                $('.g_right1').css({
                     transition : '.4s',
                     position: 'absolute',
                     top: '4%',
@@ -439,7 +417,7 @@ function Main(props){
                 })
             },1500)
             setTimeout(()=>{
-                $('.right2').css({
+                $('.g_right2').css({
                     transition : '.4s',
                     position : 'absolute',
                     top: '42%',
@@ -463,13 +441,18 @@ function Main(props){
             $('.bullit li').css({
                 backgroundColor : 'black'
             })
-            $('.left1, .left2, .left3, .right1, .right2, .right3').css({
-                transition : 'none',
-                top : '',
-                bottom : '',
-                left : '',
-                bottom : '',
-                width : '',
+            // 프로젝트보러가기 버튼 css설정
+            $('.showpj').css({
+                position: 'absolute',
+                bottom: '5%',
+                zIndex: 1,
+                background: 'white',
+                color: 'black',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                padding:' 10px',
+                borderRadius: '35px',
+                cursor : 'pointer'
             })
             $('.main_mainbx').css({
                 transition : 'none',
@@ -479,7 +462,7 @@ function Main(props){
             // 화면에따른 애니메이션 초기화 값 저장공간
             if(w == 1){
 
-                $('.left1').css({
+                $('.a_left1').css({
                     transition : 'none',
                     position: 'absolute',
                     width: '20%',
@@ -490,7 +473,7 @@ function Main(props){
                     opacity : 0
 
                 })
-                $('.left2').css({
+                $('.a_left2').css({
                     transition : 'none',
                     position: 'absolute',
                     width: '20%',
@@ -500,7 +483,7 @@ function Main(props){
                     aspectRatio : 'auto',
                     opacity : 0
                 })
-                $('.right1').css({
+                $('.a_right1').css({
                     transition : 'none',
                     position: 'absolute',
                     top: '50%',
@@ -511,7 +494,7 @@ function Main(props){
                     aspectRatio : 'auto',
                     opacity : 0
                 })
-                $('.right2').css({
+                $('.a_right2').css({
                     transition : 'none',
                     position: 'absolute',
                     top: '50%',
@@ -527,7 +510,7 @@ function Main(props){
                 })
             }
             if(w == 2){
-                $('.left1').css({
+                $('.b_left1').css({
                     transition : 'none',
                     position: 'absolute',
                     width: '0%',
@@ -538,7 +521,7 @@ function Main(props){
                     aspectRatio : 1/1.2,
                     opacity : 0
                 })
-                $('.left2').css({
+                $('.b_left2').css({
                     transition : 'none',
                     position: 'absolute',
                     width: '0%',
@@ -547,7 +530,7 @@ function Main(props){
                     left : '2%',
                     opacity : 0
                 })
-                $('.right1').css({
+                $('.b_right1').css({
                     transition : 'none',
                     position: 'absolute',
                     top: '0%',
@@ -558,7 +541,7 @@ function Main(props){
                     aspectRatio : 1/1.5,
                     opacity : 0
                 })
-                $('.right2').css({
+                $('.b_right2').css({
                     transition : 'none',
                     position: 'absolute',
                     top: '0%',
@@ -569,7 +552,7 @@ function Main(props){
                     aspectRatio : 1/1.5,
                     opacity : 0
                 })
-                $('.right3').css({
+                $('.b_right3').css({
                     transition : 'none',
                     position: 'absolute',
                     top: '0%',
@@ -591,7 +574,7 @@ function Main(props){
             }
             if(w == 4){ 
                 // console.log('4화면')
-                $('.left1').css({
+                $('.d_left1').css({
                     transition : 'none',
                     position : 'absolute',
                     top : '20%',
@@ -599,7 +582,7 @@ function Main(props){
                     width  : '20%',
                     opacity : 0,
                 })
-                $('.right1').css({
+                $('.d_right1').css({
                     transition : 'none',
                     position : 'absolute',
                     top : '8%',
@@ -607,7 +590,7 @@ function Main(props){
                     width : '26%',
                     opacity : 0,
                 })
-                $('.right2').css({
+                $('.d_right2').css({
                     transition : 'none',
                     position : 'absolute',
                     right : '14%',
@@ -622,7 +605,7 @@ function Main(props){
 
             if(w == 5){ 
                 // console.log('5화면')
-                $('.left1').css({
+                $('.e_left1').css({
                     opacity : 1,
                     position : 'absolute',
                     top : '0%',
@@ -630,7 +613,7 @@ function Main(props){
                     width : '10%',
                     transform: 'translateY(-100%)'
                 })
-                $('.left2').css({
+                $('.e_left2').css({
                     opacity : 1,
                     position : 'absolute',
                     top : '',
@@ -640,7 +623,7 @@ function Main(props){
                     width : '20%'
                 })
 
-                $('.right1').css({
+                $('.e_right1').css({
                     opacity : 1,
                     position : 'absolute',
                     top : '8%',
@@ -648,7 +631,7 @@ function Main(props){
                     width : '35%',
                     transform: 'translateX(100%)'
                 })
-                $('.right2').css({
+                $('.e_right2').css({
                     opacity : 1,
                     position : 'absolute',
                     bottom : '0%',
@@ -656,7 +639,7 @@ function Main(props){
                     width : '10%',
                     transform: 'translateY(100%)'
                 })
-                $('.right3').css({
+                $('.e_right3').css({
                     opacity : 1,
                     position : 'absolute',
                     bottom : '0%',
@@ -672,7 +655,7 @@ function Main(props){
             }
             if(w == 6){ 
                 // console.log('6화면')
-                $('.left1').css({
+                $('.f_left1').css({
                     opacity : 1,
                     position : 'absolute',
                     top :'0%',
@@ -681,7 +664,7 @@ function Main(props){
                     bottom : '',
                     transform : 'translateY(-100%)'
                 })
-                $('.left2').css({
+                $('.f_left2').css({
                     opacity : 1,
                     position : 'absolute',
                     bottom :'3%',
@@ -689,7 +672,7 @@ function Main(props){
                     width : '16%',
                     transform : 'translateX(-100%)'
                 })
-                $('.right1').css({
+                $('.f_right1').css({
                     position:'absolute',
                     top : '',
                     bottom: '2%',
@@ -703,21 +686,21 @@ function Main(props){
             }
             if(w == 7){ 
                 // console.log('7화면')
-                $('.left1').css({
+                $('.g_left1').css({
                     position: 'absolute',
                     bottom: '11%',
                     left: '0%',
                     width: '25%',
                     opacity: 0,
                 })
-                $('.right1').css({
+                $('.g_right1').css({
                     position: 'absolute',
                     top: '4%',
                     right: '12%',
                     width: '23%',
                     opacity: 0,
                 })
-                $('.right2').css({
+                $('.g_right2').css({
                     position : 'absolute',
                     top: '42%',
                     right: '4%',
@@ -731,12 +714,6 @@ function Main(props){
         }
     },[w])
 
-    // useEffect(()=>{
-    //     console.log('tt는',tt)
-    //     console.log('w는',w)
-        
-    // })
-
     return(
         <>
         {/* 코드구역 */}
@@ -748,7 +725,7 @@ function Main(props){
                 <img src={copy[w - 1].isrc} />
             }
             {
-                w === 0 ?
+                w === 0 &&
                 <>
                 <div className='main_mainbx'>
                     <h4>안녕하세요</h4>
@@ -756,7 +733,9 @@ function Main(props){
                     <p>마우스 휠을하여 다른 포폴을 만나보셈</p>
                 </div>
                 </>
-                :
+            }
+            {
+                w == 1 &&
                 <>
                 <div className='main_mainbx'>
                     <div>
@@ -765,48 +744,398 @@ function Main(props){
                 </div>
                     {
                         copy[w - 1].left1 != '' ?
-                        <div className='left1'>
+                        <div className='a_left1'>
                             <img src={copy[w - 1].left1} />
                         </div>
                         : null
                     }
                     {
                         copy[w - 1].left2 != '' ?
-                        <div className='left2'>
+                        <div className='a_left2'>
                             <img src={copy[w - 1].left2} />
                         </div>
                         : null
                     }
                     {
                         copy[w - 1].left3 != '' ?
-                        <div className='left3'>
+                        <div className='a_left3'>
                             <img src={copy[w - 1].left3} />
                         </div>
                         : null
                     }
                     {
                         copy[w - 1].right1 != '' ?
-                        <div className='right1'>
+                        <div className='a_right1'>
                             <img src={copy[w - 1].right1} />
                         </div>
                         : null
                     }
                     {
                         copy[w - 1].right2 != '' ?
-                        <div className='right2'>
+                        <div className='a_right2'>
                             <img src={copy[w - 1].right2} />
                         </div>
                         : null
                     }
                     {
                         copy[w - 1].right3 != '' ?
-                        <div className='right3'>
+                        <div className='a_right3'>
                             <img src={copy[w - 1].right3} />
                         </div>
                         : null
                     }
                 </>
             }
+            {
+                w == 2 &&
+                <>
+                <div className='main_mainbx'>
+                    <div>
+                        <img src={copy[w - 1].txt} />
+                    </div>
+                </div>
+                    {
+                        copy[w - 1].left1 != '' ?
+                        <div className='b_left1'>
+                            <img src={copy[w - 1].left1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left2 != '' ?
+                        <div className='b_left2'>
+                            <img src={copy[w - 1].left2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left3 != '' ?
+                        <div className='b_left3'>
+                            <img src={copy[w - 1].left3} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right1 != '' ?
+                        <div className='b_right1'>
+                            <img src={copy[w - 1].right1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right2 != '' ?
+                        <div className='b_right2'>
+                            <img src={copy[w - 1].right2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right3 != '' ?
+                        <div className='b_right3'>
+                            <img src={copy[w - 1].right3} />
+                        </div>
+                        : null
+                    }
+                </>
+            }
+            {
+                w == 3 &&
+                <>
+                <div className='main_mainbx'>
+                    <div>
+                        <img src={copy[w - 1].txt} />
+                    </div>
+                </div>
+                    {
+                        copy[w - 1].left1 != '' ?
+                        <div className='c_left1'>
+                            <img src={copy[w - 1].left1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left2 != '' ?
+                        <div className='c_left2'>
+                            <img src={copy[w - 1].left2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left3 != '' ?
+                        <div className='c_left3'>
+                            <img src={copy[w - 1].left3} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right1 != '' ?
+                        <div className='c_right1'>
+                            <img src={copy[w - 1].right1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right2 != '' ?
+                        <div className='c_right2'>
+                            <img src={copy[w - 1].right2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right3 != '' ?
+                        <div className='c_right3'>
+                            <img src={copy[w - 1].right3} />
+                        </div>
+                        : null
+                    }
+                </>
+            }
+            {
+                w == 4 &&
+                <>
+                <div className='main_mainbx'>
+                    <div>
+                        <img src={copy[w - 1].txt} />
+                    </div>
+                </div>
+                    {
+                        copy[w - 1].left1 != '' ?
+                        <div className='d_left1'>
+                            <img src={copy[w - 1].left1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left2 != '' ?
+                        <div className='d_left2'>
+                            <img src={copy[w - 1].left2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left3 != '' ?
+                        <div className='d_left3'>
+                            <img src={copy[w - 1].left3} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right1 != '' ?
+                        <div className='d_right1'>
+                            <img src={copy[w - 1].right1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right2 != '' ?
+                        <div className='d_right2'>
+                            <img src={copy[w - 1].right2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right3 != '' ?
+                        <div className='d_right3'>
+                            <img src={copy[w - 1].right3} />
+                        </div>
+                        : null
+                    }
+                </>
+            }
+            {
+                w == 5 &&
+                <>
+                <div className='main_mainbx'>
+                    <div>
+                        <img src={copy[w - 1].txt} />
+                    </div>
+                </div>
+                    {
+                        copy[w - 1].left1 != '' ?
+                        <div className='e_left1'>
+                            <img src={copy[w - 1].left1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left2 != '' ?
+                        <div className='e_left2'>
+                            <img src={copy[w - 1].left2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left3 != '' ?
+                        <div className='e_left3'>
+                            <img src={copy[w - 1].left3} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right1 != '' ?
+                        <div className='e_right1'>
+                            <img src={copy[w - 1].right1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right2 != '' ?
+                        <div className='e_right2'>
+                            <img src={copy[w - 1].right2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right3 != '' ?
+                        <div className='e_right3'>
+                            <img src={copy[w - 1].right3} />
+                        </div>
+                        : null
+                    }
+                </>
+            }
+            {
+                w == 6 &&
+                <>
+                <div className='main_mainbx'>
+                    <div>
+                        <img src={copy[w - 1].txt} />
+                    </div>
+                </div>
+                    {
+                        copy[w - 1].left1 != '' ?
+                        <div className='f_left1'>
+                            <img src={copy[w - 1].left1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left2 != '' ?
+                        <div className='f_left2'>
+                            <img src={copy[w - 1].left2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left3 != '' ?
+                        <div className='f_left3'>
+                            <img src={copy[w - 1].left3} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right1 != '' ?
+                        <div className='f_right1'>
+                            <img src={copy[w - 1].right1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right2 != '' ?
+                        <div className='f_right2'>
+                            <img src={copy[w - 1].right2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right3 != '' ?
+                        <div className='f_right3'>
+                            <img src={copy[w - 1].right3} />
+                        </div>
+                        : null
+                    }
+                </>
+            }
+            {
+                w == 7 &&
+                <>
+                <div className='main_mainbx'>
+                    <div>
+                        <img src={copy[w - 1].txt} />
+                    </div>
+                </div>
+                    {
+                        copy[w - 1].left1 != '' ?
+                        <div className='g_left1'>
+                            <img src={copy[w - 1].left1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left2 != '' ?
+                        <div className='g_left2'>
+                            <img src={copy[w - 1].left2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].left3 != '' ?
+                        <div className='g_left3'>
+                            <img src={copy[w - 1].left3} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right1 != '' ?
+                        <div className='g_right1'>
+                            <img src={copy[w - 1].right1} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right2 != '' ?
+                        <div className='g_right2'>
+                            <img src={copy[w - 1].right2} />
+                        </div>
+                        : null
+                    }
+                    {
+                        copy[w - 1].right3 != '' ?
+                        <div className='g_right3'>
+                            <img src={copy[w - 1].right3} />
+                        </div>
+                        : null
+                    }
+                </>
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
             {/* 인디케이터 */}
@@ -825,14 +1154,19 @@ function Main(props){
             {/* 인디케이터 */}
 
             {/* 스크롤 이미지 */}
-            <div className='mit'>
+            {
+                w == 0 ? 
+                <div className='mit'>
                 <img src='./../images/scroll.png' />
-            </div>
+                </div>
+                :
+                <button className="showpj"
+                onClick={()=>{window.open(copy[w - 1].address)}}
+                >Show Project</button>
+            }
             {/* 스크롤 이미지 */}
         </section>
-        {
-            () =>{ wheelFn() }
-        }
+        
         </>
         
     )
