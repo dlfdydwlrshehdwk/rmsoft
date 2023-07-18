@@ -12,7 +12,7 @@ function jqFn(){
 
 function Intro(props){
 
-    let a = useSelector((state)=>{return state})
+    let ab = useSelector((state)=>{return state})
     let dispatch = useDispatch()
 
     return(
@@ -20,7 +20,7 @@ function Intro(props){
         <div className='introwrap'>
             <div className='introbx'>
                 <div className='intro_textbx'>
-                    <div>알엠소프트</div>
+                    <div>RM Soft</div>
                     <h1>김동호의 포트폴리오</h1>
                 </div>
                 <div className='intro_rmimgbx'>

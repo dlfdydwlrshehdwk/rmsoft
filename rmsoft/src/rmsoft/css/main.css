@@ -20,7 +20,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    
     width: 330px;
     height: 300px;
 }
@@ -41,7 +40,6 @@
     width: 15px;
     height: 15px;
     margin-bottom: 5px;
-    cursor: pointer;
 }
 
 .mit{
@@ -50,3 +48,29 @@
     left: 50%;
     transform: translateX(-50%);
 }
+
+.showpj:hover .showpjimg{
+    animation: RoundHend 1s linear;
+    transform-origin: bottom center;
+}
+
+@keyframes RoundHend {
+    0%{
+        transform: rotate(0deg);
+    }
+    20%{
+        transform: rotate(13deg);
+    }
+    40%{
+        transform: rotate(-13deg);
+    }
+    60%{
+        transform: rotate(13deg);
+    }
+    80%{
+        transform: rotate(-13deg);
+    }
+    95%{
+        transform: rotate(13deg);
+    }
+  }

@@ -15,6 +15,8 @@ function jqFn(){
 
 function Main(props){
 
+    let qwe = '<Show Project>'
+    let ewq = "</Show Project>"
     let copy = [...pofoldata]
     // idx를 기준으로해서 역으로 배열정렬
     copy = copy.sort((x,y)=>{
@@ -27,8 +29,14 @@ function Main(props){
     let [w,setW] = useState(0)
     let [tt, setTt] = useState(0)
 
+    let ab = useSelector((state)=>{return state})
+
+    console.log('ab',ab.intro)
 
 
+    function hdhd(){
+        
+    }
 
 
 
@@ -71,6 +79,7 @@ function Main(props){
     useEffect(()=>{
         console.log('tt',tt)
         // 리턴에 있는거 실행되고 나서 실행
+
         // 불릿 알맞는거 색칠해줌
         $('.bullit li').eq(w).css({
             backgroundColor : 'white'
@@ -82,6 +91,12 @@ function Main(props){
                     transition : '1s',
                     opacity : 1
                 })
+                // 흔들흔들 나타나게하기 값
+                $('.showpj').css({
+                    transition : '1s',
+                    opacity : 1
+                })
+                
             },1000)
         }
         // 화면에따른 애니메이션 실행값 저장공간
@@ -150,6 +165,7 @@ function Main(props){
                         opacity : 1
                     })
                 },2000)
+            
         }
 
         if(w == 2){
@@ -261,6 +277,7 @@ function Main(props){
                     opacity : 1
                 })
             },1000)
+
         }
 
         if(w == 4){
@@ -357,7 +374,6 @@ function Main(props){
                     opacity : 1
                 })
             },1500)
-
         }
         if(w == 6){
             setTimeout(()=>[
@@ -443,6 +459,12 @@ function Main(props){
 
         // 제일먼저 실행될코드
         return () => {
+
+            // 흔들흔들 초기화
+            $('.showpj').css({
+                transition : 'none',
+                opacity : 0
+            })
             // 불릿 색칠 초기화
             $('.bullit li').css({
                 backgroundColor : 'black'
@@ -452,13 +474,20 @@ function Main(props){
                 position: 'absolute',
                 bottom: '5%',
                 zIndex: 1,
-                background: 'white',
-                color: 'black',
                 left: '50%',
                 transform: 'translateX(-50%)',
                 padding:' 10px',
-                borderRadius: '35px',
-                cursor : 'pointer'
+                cursor : 'pointer',
+                color : 'white',
+                fontWeight : 'bold',
+                display : 'flex',
+                flexDirection :'column',
+                alignItems : 'center',
+                gap : '13px'
+            })
+            $('.showpjimg').css({
+                width : '40px',
+                height : '40px'
             })
             $('.main_mainbx').css({
                 transition : 'none',
@@ -608,7 +637,6 @@ function Main(props){
                     opacity : 0
                 })
             }
-
             if(w == 5){ 
                 // console.log('5화면')
                 $('.e_left1').css({
@@ -656,7 +684,6 @@ function Main(props){
                 $('.main_mainbx').css({
                     opacity : 0
                 })
-
 
             }
             if(w == 6){ 
@@ -720,21 +747,66 @@ function Main(props){
         }
     },[w])
 
+    useEffect(()=>{
+        $('.main_mainbx').css({
+            opacity : 0
+        })
+        $('.showpj').css({
+            opacity : 0
+        })
+        setTimeout(()=>{
+            $('.main_mainbx').css({
+                transition : '1s',
+                opacity : 1
+            })
+        },10)
+        setTimeout(()=>{
+            $('.showpj').css({
+                transition : '1s',
+                opacity : 1
+            })
+        },10)
+    })
+    useEffect(()=>{
+        setTimeout(()=>{
+            $('.main_mainbx').css({
+                transition : '1s',
+                opacity : 1
+            })
+            $('.showpj').css({
+                transition : '1s',
+                opacity : 1
+            })
+        },10)
+    },[ab])
+
     return(
         <>
         {/* 코드구역 */}
         <section className='main_sec'>
             {
                 w === 0 ?
-                <img src='./../images/bg3.jpg' />
+                <img src='./images/bg3.jpg' />
                 :
                 <img src={copy[w - 1].isrc} />
             }
             {
+
                 w === 0 &&
+                ab.intro == 0 &&
                 <>
                 <div className='main_mainbx'>
-                    <img src='./../images/txt.png'/>
+                    <img src='./images/txt.png'/>
+                </div>
+                </>
+            }
+            {
+
+                w === 0 &&
+                ab.intro == 1 &&
+                <>
+                <div className='main_mainbx'>
+                    <img src='./images/txt.png'/>
                 </div>
                 </>
             }
@@ -1154,9 +1226,6 @@ function Main(props){
                 {
                     copy.map((x,i)=>
                         <li key={i}
-                        onClick={()=>{
-                            setW(i + 1)
-                        }}
                         ></li>
                     )
                 }
@@ -1167,12 +1236,18 @@ function Main(props){
             {
                 w == 0 ? 
                 <div className='mit'>
-                <img src='./../images/scroll.png' />
+                <img src='./images/scroll.png' />
                 </div>
                 :
-                <button className="showpj"
+                <div className="showpj"
                 onClick={()=>{window.open(copy[w - 1].address)}}
-                >Show Project</button>
+                >
+                    <div>{qwe}</div>
+                    <div className="showpjimg">
+                    <img src="./images/hand.png"/>
+                    </div>
+                    <div>{ewq}</div>
+                </div>
             }
             {/* 스크롤 이미지 */}
         </section>
