@@ -30,10 +30,10 @@ function Intro(props){
     return(
         <>
         <div className='introwrap'>
-            <img src='./../images/bg3.jpg' />
+            <img src='./images/bg3.jpg' />
             <div className='introbx'>
                 <div className='intro_rmimgbx'>
-                    <img src='./../images/txt.png'/>
+                    <img src='./images/txt.png'/>
                 <button
                 className='intro_btn'
                 onMouseOver={()=>{

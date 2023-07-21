@@ -807,7 +807,7 @@ function Main(props){
         <section className='main_sec'>
             {
                 w === 0 ?
-                <img src='./../images/bg3.jpg' />
+                <img src='./images/bg3.jpg' />
                 :
                 <img src={copy[w - 1].isrc} />
             }
@@ -817,7 +817,7 @@ function Main(props){
                 ab.intro == 0 &&
                 <>
                 <div className='main_mainbx'>
-                    <img style={{height : 'auto'}} src='./../images/soga.png'/>
+                    <img style={{height : 'auto'}} src='./images/soga.png'/>
                 </div>
                 </>
             }
@@ -827,7 +827,7 @@ function Main(props){
                 ab.intro == 1 &&
                 <>
                 <div className='main_mainbx'>
-                    <img style={{height : 'auto'}} src='./../images/txt.png'/>
+                    <img style={{height : 'auto'}} src='./images/txt.png'/>
                 </div>
                 </>
             }
@@ -1258,7 +1258,7 @@ function Main(props){
             {
                 w == 0 ? 
                 <div className='mit'>
-                <img src='./../images/scroll.png' />
+                <img src='./images/scroll.png' />
                 </div>
                 :
                 <div className="showpj"
@@ -1266,7 +1266,7 @@ function Main(props){
                 >
                     <div>{qwe}</div>
                     <div className="showpjimg">
-                    <img src="./../images/hand.png"/>
+                    <img src="./images/hand.png"/>
                     </div>
                     <div>{ewq}</div>
                 </div>
