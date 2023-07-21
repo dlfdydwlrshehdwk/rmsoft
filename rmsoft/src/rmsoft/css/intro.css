@@ -5,8 +5,14 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 11;
+    z-index: 111;
     background: white;
+    opacity: 1;
+}
+.introwrap > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 /* 인트로 랩박스안에있는 구성 다담은 박스 */
 .introbx{
@@ -14,6 +20,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    opacity: 0;
 }
 /* 그 박스 안에 있는 텍스트만 담은박스 */
 .intro_textbx{
@@ -31,7 +38,7 @@
     height: 100%;
 }
 /* 인트로 박스 안에있는 버튼 */
-.introbx > button{
+.introbx  button{
     position: absolute;
     bottom: -10%;
     left: 50%;
@@ -41,4 +48,6 @@
     border-radius: 35px;
     padding: 10px 15px;
     cursor: pointer;
+    border-color: white;
+    color : white
 }

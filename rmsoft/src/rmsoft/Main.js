@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { changeWheel, wheelDown, wheelUp } from '../store.js';
 import pofoldata from './data/pofoldata'; 
+import { changeIntro } from '../store.js';
 
 // 제이쿼리 로드구역 함수
 function jqFn(){
@@ -29,15 +30,19 @@ function Main(props){
     let [w,setW] = useState(0)
     let [tt, setTt] = useState(0)
 
+    console.log(a.intro)
+
     let ab = useSelector((state)=>{return state})
 
-    console.log('ab',ab.intro)
+    console.log('a',a.intro)
 
 
     console.log(copy)
 
-
-
+    console.log(sessionStorage.getItem('intro'))
+    if(sessionStorage.getItem('intro')){
+        dispatch(changeIntro())
+    }
 
 
 
@@ -50,7 +55,7 @@ function Main(props){
     
     function wheelFn(){
 
-        $('body').on('wheel',function(e){
+        $('.cont').on('wheel',function(e){
 
             let d = e.originalEvent.wheelDelta
 
@@ -73,13 +78,13 @@ function Main(props){
     }
 
     wheelFn()
-
+    
     useEffect(()=>{
         console.log('tt',tt)
         // 리턴에 있는거 실행되고 나서 실행
 
         // 불릿 알맞는거 색칠해줌
-        $('.bullit li').eq(w).css({
+        $('.bullit li').eq(w - 1).css({
             backgroundColor : 'white'
         })
 
@@ -462,7 +467,6 @@ function Main(props){
 
         // 제일먼저 실행될코드
         return () => {
-
             // 흔들흔들 초기화
             $('.showpj').css({
                 transition : 'none',
@@ -793,9 +797,13 @@ function Main(props){
         },10)
     },[ab])
 
+
     return(
         <>
-        {/* 코드구역 */}
+            {/* 코드구역 */}
+        {
+            a.intro == 0 &&
+        
         <section className='main_sec'>
             {
                 w === 0 ?
@@ -809,7 +817,7 @@ function Main(props){
                 ab.intro == 0 &&
                 <>
                 <div className='main_mainbx'>
-                    <img style={{height : 'auto'}} src='./../images/txt.png'/>
+                    <img style={{height : 'auto'}} src='./../images/soga.png'/>
                 </div>
                 </>
             }
@@ -1234,15 +1242,16 @@ function Main(props){
 
 
             {/* 인디케이터 */}
+            {w > 0 &&
             <ul className='bullit'>
-                <li onClick={()=>{setW(0)}}></li>
                 {
                     copy.map((x,i)=>
-                        <li key={i}
-                        ></li>
+                    <li key={i}
+                    ></li>
                     )
                 }
             </ul>
+                }
             {/* 인디케이터 */}
 
             {/* 스크롤 이미지 */}
@@ -1264,7 +1273,7 @@ function Main(props){
             }
             {/* 스크롤 이미지 */}
         </section>
-        
+        }
         </>
         
     )
