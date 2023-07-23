@@ -34,7 +34,7 @@ function Intro(props){
             <div className='introbx'>
                 <h1 style={{textAlign : 'center'}}>김동호의 포트폴리오</h1>
                 <div className='intro_rmimgbx'>
-                    <img src='./../images/test.png'/>
+                    <img src='./images/test.png'/>
                 <button
                 className='intro_btn'
                 onMouseOver={()=>{
