@@ -30,26 +30,27 @@ function Intro(props){
     return(
         <>
         <div className='introwrap'>
-            <img src='./images/bg3.jpg' />
+            {/* <img src='./images/bg3.jpg' /> */}
             <div className='introbx'>
+                <h1 style={{textAlign : 'center'}}>김동호의 포트폴리오</h1>
                 <div className='intro_rmimgbx'>
-                    <img src='./images/txt.png'/>
+                    <img src='./../images/test.png'/>
                 <button
                 className='intro_btn'
                 onMouseOver={()=>{
                     $('.intro_btn').css({
                         transition : '.4s',
-                        color : 'black',
-                        backgroundColor : 'white',
-                        borderColor : 'black'
+                        color : 'white',
+                        backgroundColor : 'black',
+                        borderColor : 'white'
                     })
                 }} 
                 onMouseLeave={()=>{
                     $('.intro_btn').css({
                         transition : '.4s',
-                        color : 'white',
+                        color : 'black',
                         backgroundColor : 'transparent',
-                        borderColor : 'white'
+                        borderColor : 'black'
                     })
                 }} 
                 onClick={()=>{
