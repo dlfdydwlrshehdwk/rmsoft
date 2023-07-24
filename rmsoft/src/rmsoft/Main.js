@@ -1258,7 +1258,7 @@ function Main(props){
             {
                 w == 0 ? 
                 <div className='mit'>
-                <img src='./images/scroll.png' />
+                <img src='./../images/scroll.png' />
                 </div>
                 :
                 <div className="showpj"
@@ -1266,7 +1266,7 @@ function Main(props){
                 >
                     <div>{qwe}</div>
                     <div className="showpjimg">
-                    <img src="./images/hand.png"/>
+                    <img src="./../images/hand.png"/>
                     </div>
                     <div>{ewq}</div>
                 </div>
